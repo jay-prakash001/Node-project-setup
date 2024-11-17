@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "a full professional project setup",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev":"nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "javascript"
   ],
   "author": "jay prakash",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
