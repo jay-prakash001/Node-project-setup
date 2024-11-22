@@ -37,7 +37,39 @@ This is a full setup for backend with js , node , express and mongoDB
 ### dotenv.config(
 ###    {path:'./env'}
 ### ) and go to scripts in package.json "dev" : "nodemone -r dotenv/config --experimental-json-modules src/index.js"
+## use extension for the file imports if error occurs and recheck the connection string
+
+# Middleware -> coockieparser cors -> used to handle cross continent request i guess
+## npm i cookie-parser cors
+
+## we use middleware with app.use(middleware())
+## CORS_ORIGIN = * => FOR REQUEST FROM ANY WHERE
+
+# middlewares -> extra validation before response if the requester is eligible to accept the response or not i.e if the user is logged in or not? or check if user is admin or not?
+# we can use multiple middlewares 
+## (err, req, res, next)
+### next is flag that specifies the it's work is done and turn of the next method
+
+# models
+
+## good naming conventions for models -> name.models.js
+
+# we can store files in mongodb itselft but it is not so good practice
+
+##  index:true //optimized searching
+
+##     type :String,//cloudinary url ->cloud storage for files
+
+# Aggregation for mongodb  -> 
+# $ npm i mongoose-aggregate-paginate-v2
+
+# bcrypt and bcryptjs ->
+## it helps to hash password
+
+# JWT (json web token) ->
+## 
 
 
+# Pre (hook) -> does something just before saving or doing something
 
 
