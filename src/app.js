@@ -24,4 +24,12 @@ app.use(express.static("public"))// folder where static resources are located
 
 app.use(cookieParser())//store and remove cookie for client side only by the server
 
+//routes import
+
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+app.use("/api/v1/users",userRouter) //base/api/v1/users/
+
+
 export default app

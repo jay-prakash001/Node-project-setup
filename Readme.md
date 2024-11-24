@@ -85,5 +85,7 @@ This is a full setup for backend with js , node , express and mongoDB
 
 ## we are using disk storage in multer
 
+# controller ,loging, register, router
+
 
 
