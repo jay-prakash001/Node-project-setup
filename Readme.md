@@ -46,6 +46,9 @@ This is a full setup for backend with js , node , express and mongoDB
 ## CORS_ORIGIN = * => FOR REQUEST FROM ANY WHERE
 
 # middlewares -> extra validation before response if the requester is eligible to accept the response or not i.e if the user is logged in or not? or check if user is admin or not?
+
+# jane se phle mujhse milke jana
+
 # we can use multiple middlewares 
 ## (err, req, res, next)
 ### next is flag that specifies the it's work is done and turn of the next method
@@ -71,5 +74,16 @@ This is a full setup for backend with js , node , express and mongoDB
 
 
 # Pre (hook) -> does something just before saving or doing something
+
+# file upload handling
+## cloudinary -> online cloud to store files 
+## express file upload // multer file upload
+## we should use two step method to upload file 
+## upload file on our local server for temparory using multer then upload it to cloudinary then remover from local server
+# install multer and cloudinary
+# make a middleware for multer for file upload
+
+## we are using disk storage in multer
+
 
 
