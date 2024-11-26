@@ -87,5 +87,27 @@ This is a full setup for backend with js , node , express and mongoDB
 
 # controller ,loging, register, router
 
+# register user
+## -> get user details from frontend
+## -> validate user details eg. not empty field
+## -> check if user already exists : username / email / phone
+## -> mkdir public/temp
+## -> check for files
+## -> upload files to cloudinary
+## -> create user objec - create entry in db
+## -> remove refresh token and password from response
+## -> check if response is not null for user creation
+## -> return response
 
+
+# login user
+## req body -> data
+## validation of email/ username and password
+## find the user if exists
+## check password -> wrong password
+## generate refresh and access token
+## send cookie containing r and a token
+
+# logout
+# auth.middleware.js
 

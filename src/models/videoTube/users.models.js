@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 
 const userSchema = new Schema({
-    userName: {
+    username: {
         type: String,
         required: true,
         unique: true,
@@ -29,7 +29,7 @@ const userSchema = new Schema({
         type: String,//cloudinary url ->cloud storage
         required: true
     },
-    conveImage: {
+    coverImage: {
         type: String
     },
     watchHistory: [{
@@ -50,10 +50,10 @@ const userSchema = new Schema({
 }, { timestamps: true })
 
 userSchema.pre("save", async function (next) {
-    if (!this.isMoified("password")) {
+    if (!this.isModified("password")) {
         return next()
     }
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
 
@@ -94,4 +94,4 @@ userSchema.methods.generateRefreshToken = function () {
     })
 }
 // above both are jwt token having difference in usage
-export default User = mongoose.model("User", userSchema)
+export const User = mongoose.model("User", userSchema)

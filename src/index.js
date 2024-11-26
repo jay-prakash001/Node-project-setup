@@ -3,7 +3,7 @@ import connectDB from "./db/db.js"; //'.package/file.js'
 import app from './app.js';
 
 dotenv.config(
-    { path: './env' }
+    { path: './.env' }
 )
 const PORT = process.env.PORT || 8000
 // just like onSuccessListener and .onFailureListener
