@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import { User } from "../models/videoTube/users.models";
-
+import { User } from "../models/videoTube/users.models.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 export const verifyJWT = asyncHandler(async (req, res_, next) => {
     try {

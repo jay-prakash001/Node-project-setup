@@ -9,14 +9,23 @@ const PORT = process.env.PORT || 8000
 // just like onSuccessListener and .onFailureListener
 connectDB()
     .then(()=>{
-        app.on('error',(error)=>{
+        // app.on('error',(error)=>{
+        //     console.log('ERRR ',error)
+        //     throw error
+        // })
+        //
+        // app.listen(PORT,()=>{
+        //     console.log(`app is running on ${PORT}`);
+        //
+        // })
+      app.on('error',(error)=>{
             console.log('ERRR ',error)
             throw error
         })
-        
+
         app.listen(PORT,()=>{
             console.log(`app is running on ${PORT}`);
-            
+
         })
 
     }).catch((err) => {

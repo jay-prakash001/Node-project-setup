@@ -64,17 +64,28 @@ userSchema.pre("save", async function (next) {
 // it is going to run for every changes in the schema so we need to make a check 
 // that if the password is going to change then only the hashing will run and for first time only
 
-userSchema.method.isPasswordCorrect = async function (password) {
+userSchema.method.isPasswordCorrect0 = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
+
+userSchema.methods.isPasswordCorrect = async function (password) {
+    try {
+        const result = 
+         await bcrypt.compare(password, this.password); // Compare input password with hashed password
+         return result
+    } catch (error) {
+        console.error("Error comparing passwords:", error);
+        return false;
+    }
+};
 // to check the password and stored password in the encrypt form
 // this.password => encrypted and returns a boolean value 
 // jwt is a bearer token (like a key) needed to request data from database
 
-userSchema.method.generateAccessToken = function () {
+userSchema.methods.generateAccessToken = function () {
     // jwt.sign({payload},ATSECRET,{EXPIRY})
     return jwt.sign({
-        _id: this_id,
+        _id: this._id,
         email: this.email,
         userName: this.userName,
         fullname: this.fullname,
@@ -87,7 +98,7 @@ userSchema.method.generateAccessToken = function () {
 userSchema.methods.generateRefreshToken = function () {
     // less information 
     return jwt.sign({
-        _id: this_id
+        _id: this._id
 
     }, process.env.REFRESH_TOKEN_SECRET, {
         expiresIn: process.env.REFRESH_TOKEN_EXPIRY
