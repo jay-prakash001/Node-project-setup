@@ -4,7 +4,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 export const verifyJWT = asyncHandler(async (req, res_, next) => {
     try {
-        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Beared ", "")
+        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "")
 
         // in frontend we send header like {Authorization : Beared <accessToken>}
 
